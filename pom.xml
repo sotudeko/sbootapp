@@ -78,7 +78,7 @@
 					<stage>build</stage>
 					<username>admin</username>
 					<password>admin123</password>
-					<resultFile>results.json</resultFile>
+					<resultFile>result.json</resultFile>
 				</configuration>
 				<executions>
 					<execution>
