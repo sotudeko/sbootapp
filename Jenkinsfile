@@ -6,6 +6,10 @@ pipeline {
         jobCredentialsId = 'admin'
         iqStage = 'build'
     }
+
+    tools {
+        jdk 'jdk8'
+    }
     
     stages {
         stage('Build') {
