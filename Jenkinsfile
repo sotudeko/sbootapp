@@ -17,11 +17,17 @@ pipeline {
         stage('Nexus IQ Scan'){
             steps {
                 script{
-                        nexusPolicyEvaluation failBuildOnNetworkError: true, 
+                           nexusPolicyEvaluation advancedProperties: '',
+                                              enableDebugLogging: true,
+                                              failBuildOnNetworkError: false,
                                               iqApplication: selectedApplication('sbootapp-ci'),
-                                              iqScanPatterns: [[scanPattern: '**/*.jar']],
-                                              iqStage: "${iqStage}", 
-                                              jobCredentialsId: "${jobCredentialsId}"
+                                              iqInstanceId: "${iqStage}",
+//                                               iqScanPatterns: [[scanPattern: '**/*.jar '],
+//                                                                [scanPattern: '**/*.war'],
+//                                                                [scanPattern: '**/*.xml']],
+                                              iqScanPatterns: [[scanPattern: 'sbootapp-*.jar']],
+                                              iqStage: 'build',
+                                              jobCredentialsId: '${jobCredentialsId}'
                 }
             }
         }
