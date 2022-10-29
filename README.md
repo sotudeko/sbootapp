@@ -1,3 +1,3 @@
 # sbootapp
 
-mvn clean package spring-boot:repackage
+mvn clean package clm:evaluate
